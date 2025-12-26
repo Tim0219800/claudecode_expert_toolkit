@@ -3,7 +3,16 @@
     "allow": [
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git branch:*)"
+      "Bash(git branch:*)",
+      "Bash(npm run build:*)",
+      "Bash(git push:*)",
+      "Bash(powershell -Command \"Get-Content install.ps1 | Out-Null; if \\($?\\) { Write-Host ''install.ps1: OK'' } else { Write-Host ''install.ps1: ERROR'' }\")",
+      "Bash(powershell -Command \"Get-Content install-remote.ps1 | Out-Null; if \\($?\\) { Write-Host ''install-remote.ps1: OK'' } else { Write-Host ''install-remote.ps1: ERROR'' }\")",
+      "Bash(powershell -Command:*)",
+      "Bash(bash:*)",
+      "Bash(powershell -File install.ps1:*)",
+      "Bash(cat:*)",
+      "Bash(test:*)"
     ]
   }
 }
