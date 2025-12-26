@@ -1,0 +1,32 @@
+{
+  "name": "claude-code-premium",
+  "version": "1.0.0",
+  "description": "Premium status bar, skills, and enhancements for Claude Code CLI",
+  "keywords": [
+    "claude",
+    "claude-code",
+    "cli",
+    "plugin",
+    "status-bar",
+    "productivity"
+  ],
+  "homepage": "https://github.com/Tim0219800/claude-code-premium",
+  "bugs": {
+    "url": "https://github.com/Tim0219800/claude-code-premium/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tim0219800/claude-code-premium.git"
+  },
+  "license": "MIT",
+  "author": "Claude Code Community",
+  "scripts": {
+    "install:windows": "powershell -ExecutionPolicy Bypass -File install.ps1",
+    "install:unix": "bash install.sh",
+    "uninstall:windows": "powershell -ExecutionPolicy Bypass -File install.ps1 -Uninstall",
+    "uninstall:unix": "bash install.sh --uninstall"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
