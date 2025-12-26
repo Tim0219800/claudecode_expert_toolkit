@@ -2,8 +2,6 @@
 
 A beautiful, feature-rich plugin for [Claude Code](https://claude.ai/code) that adds a premium status bar, powerful skills, session tracking, and auto-permissions.
 
-![Status Line Preview](docs/preview.png)
-
 ## Features
 
 ### Real-time Status Bar
@@ -20,7 +18,7 @@ A beautiful, feature-rich plugin for [Claude Code](https://claude.ai/code) that 
 - **Cost** - Session cost with hourly rate
 - **Lines changed** - Code modifications (+added/-removed)
 
-### 14 Powerful Skills
+### 16 Powerful Skills
 
 | Skill | Description |
 |-------|-------------|
@@ -39,6 +37,7 @@ A beautiful, feature-rich plugin for [Claude Code](https://claude.ai/code) that 
 | `/perf` | Performance analysis |
 | `/deploy` | Automated deployment |
 | `/budget` | Cost tracking and alerts |
+| `/update` | Check and install plugin updates |
 
 ### Auto-Permissions
 
