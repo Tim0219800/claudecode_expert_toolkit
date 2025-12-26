@@ -118,8 +118,13 @@ install_plugin() {
   "hooks": {
     "Stop": [
       {
-        "type": "command",
-        "command": "~/.claude/hooks/save-session.sh"
+        "matcher": {},
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/save-session.sh"
+          }
+        ]
       }
     ]
   },
@@ -127,13 +132,13 @@ install_plugin() {
     "allow": [
       "Read", "Write", "Edit", "MultiEdit", "Glob", "Grep", "LS",
       "NotebookEdit", "TodoRead", "TodoWrite", "WebFetch", "WebSearch",
-      "Bash(git *)", "Bash(npm *)", "Bash(npx *)", "Bash(node *)",
-      "Bash(python *)", "Bash(pip *)", "Bash(pnpm *)", "Bash(yarn *)",
-      "Bash(cargo *)", "Bash(go *)", "Bash(mkdir *)", "Bash(ls *)",
-      "Bash(cd *)", "Bash(cat *)", "Bash(echo *)", "Bash(pwd)",
-      "Bash(which *)", "Bash(code *)", "Bash(tsc *)",
-      "Bash(eslint *)", "Bash(prettier *)", "Bash(jest *)",
-      "Bash(vitest *)", "Bash(pytest *)"
+      "Bash(git:*)", "Bash(npm:*)", "Bash(npx:*)", "Bash(node:*)",
+      "Bash(python:*)", "Bash(pip:*)", "Bash(pnpm:*)", "Bash(yarn:*)",
+      "Bash(cargo:*)", "Bash(go:*)", "Bash(mkdir:*)", "Bash(ls:*)",
+      "Bash(cd:*)", "Bash(cat:*)", "Bash(echo:*)", "Bash(pwd)",
+      "Bash(which:*)", "Bash(code:*)", "Bash(tsc:*)",
+      "Bash(eslint:*)", "Bash(prettier:*)", "Bash(jest:*)",
+      "Bash(vitest:*)", "Bash(pytest:*)"
     ],
     "deny": []
   }

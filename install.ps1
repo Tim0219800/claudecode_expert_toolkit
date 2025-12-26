@@ -123,8 +123,13 @@ function Install-Plugin {
         hooks = @{
             Stop = @(
                 @{
-                    type = "command"
-                    command = "powershell -ExecutionPolicy Bypass -File `"$CLAUDE_DIR\hooks\save-session.ps1`""
+                    matcher = @{}
+                    hooks = @(
+                        @{
+                            type = "command"
+                            command = "powershell -ExecutionPolicy Bypass -File `"$CLAUDE_DIR\hooks\save-session.ps1`""
+                        }
+                    )
                 }
             )
         }
@@ -132,13 +137,13 @@ function Install-Plugin {
             allow = @(
                 "Read", "Write", "Edit", "MultiEdit", "Glob", "Grep", "LS",
                 "NotebookEdit", "TodoRead", "TodoWrite", "WebFetch", "WebSearch",
-                "Bash(git *)", "Bash(npm *)", "Bash(npx *)", "Bash(node *)",
-                "Bash(python *)", "Bash(pip *)", "Bash(pnpm *)", "Bash(yarn *)",
-                "Bash(cargo *)", "Bash(go *)", "Bash(mkdir *)", "Bash(ls *)",
-                "Bash(cd *)", "Bash(cat *)", "Bash(echo *)", "Bash(pwd)",
-                "Bash(which *)", "Bash(where *)", "Bash(code *)", "Bash(tsc *)",
-                "Bash(eslint *)", "Bash(prettier *)", "Bash(jest *)",
-                "Bash(vitest *)", "Bash(pytest *)"
+                "Bash(git:*)", "Bash(npm:*)", "Bash(npx:*)", "Bash(node:*)",
+                "Bash(python:*)", "Bash(pip:*)", "Bash(pnpm:*)", "Bash(yarn:*)",
+                "Bash(cargo:*)", "Bash(go:*)", "Bash(mkdir:*)", "Bash(ls:*)",
+                "Bash(cd:*)", "Bash(cat:*)", "Bash(echo:*)", "Bash(pwd)",
+                "Bash(which:*)", "Bash(where:*)", "Bash(code:*)", "Bash(tsc:*)",
+                "Bash(eslint:*)", "Bash(prettier:*)", "Bash(jest:*)",
+                "Bash(vitest:*)", "Bash(pytest:*)"
             )
             deny = @()
         }
