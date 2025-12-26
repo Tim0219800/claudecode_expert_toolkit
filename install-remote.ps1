@@ -4,14 +4,14 @@
 .DESCRIPTION
     Downloads and installs the plugin directly from GitHub
 .EXAMPLE
-    iwr -useb https://raw.githubusercontent.com/Tim0219800/claude-code-premium/main/install-remote.ps1 | iex
+    iwr -useb https://raw.githubusercontent.com/Tim0219800/claudecode_expert_toolkit/main/install-remote.ps1 | iex
 #>
 
 $ErrorActionPreference = "Stop"
 
-$REPO = "Tim0219800/claude-code-premium"
+$REPO = "Tim0219800/claudecode_expert_toolkit"
 $BRANCH = "main"
-$TEMP_DIR = "$env:TEMP\claude-code-premium-install"
+$TEMP_DIR = "$env:TEMP\claudecode_expert_toolkit-install"
 
 Write-Host ""
 Write-Host "╔══════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
@@ -27,7 +27,7 @@ if (Test-Path $TEMP_DIR) {
 # Download
 Write-Host "  Downloading from GitHub..." -ForegroundColor Cyan
 $zipUrl = "https://github.com/$REPO/archive/refs/heads/$BRANCH.zip"
-$zipPath = "$env:TEMP\claude-code-premium.zip"
+$zipPath = "$env:TEMP\claudecode_expert_toolkit.zip"
 
 Invoke-WebRequest -Uri $zipUrl -OutFile $zipPath -UseBasicParsing
 

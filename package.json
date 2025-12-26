@@ -1,5 +1,5 @@
 {
-  "name": "claude-code-premium",
+  "name": "claudecode_expert_toolkit",
   "version": "1.0.0",
   "description": "Premium status bar, skills, and enhancements for Claude Code CLI",
   "keywords": [
@@ -10,13 +10,13 @@
     "status-bar",
     "productivity"
   ],
-  "homepage": "https://github.com/Tim0219800/claude-code-premium",
+  "homepage": "https://github.com/Tim0219800/claudecode_expert_toolkit",
   "bugs": {
-    "url": "https://github.com/Tim0219800/claude-code-premium/issues"
+    "url": "https://github.com/Tim0219800/claudecode_expert_toolkit/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tim0219800/claude-code-premium.git"
+    "url": "git+https://github.com/Tim0219800/claudecode_expert_toolkit.git"
   },
   "license": "MIT",
   "author": "Claude Code Community",

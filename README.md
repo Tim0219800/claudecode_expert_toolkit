@@ -66,8 +66,8 @@ Automatic session saving with:
 
 ```powershell
 # Clone the repository
-git clone https://github.com/Tim0219800/claude-code-premium.git
-cd claude-code-premium
+git clone https://github.com/Tim0219800/claudecode_expert_toolkit.git
+cd claudecode_expert_toolkit
 
 # Run installer
 .\install.ps1
@@ -77,8 +77,8 @@ cd claude-code-premium
 
 ```bash
 # Clone the repository
-git clone https://github.com/Tim0219800/claude-code-premium.git
-cd claude-code-premium
+git clone https://github.com/Tim0219800/claudecode_expert_toolkit.git
+cd claudecode_expert_toolkit
 
 # Make installer executable and run
 chmod +x install.sh
@@ -89,12 +89,12 @@ chmod +x install.sh
 
 **Windows:**
 ```powershell
-iwr -useb https://raw.githubusercontent.com/Tim0219800/claude-code-premium/main/install-remote.ps1 | iex
+iwr -useb https://raw.githubusercontent.com/Tim0219800/claudecode_expert_toolkit/main/install-remote.ps1 | iex
 ```
 
 **Linux/macOS:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Tim0219800/claude-code-premium/main/install-remote.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Tim0219800/claudecode_expert_toolkit/main/install-remote.sh | bash
 ```
 
 ---
@@ -173,7 +173,7 @@ Add hooks for events:
 ### Windows
 
 ```powershell
-cd claude-code-premium
+cd claudecode_expert_toolkit
 git pull
 .\install.ps1 -Update
 ```
@@ -181,7 +181,7 @@ git pull
 ### Linux/macOS
 
 ```bash
-cd claude-code-premium
+cd claudecode_expert_toolkit
 git pull
 ./install.sh --update
 ```
@@ -258,5 +258,5 @@ Created with Claude Code by the community.
 
 ## Support
 
-- [Report Issues](https://github.com/Tim0219800/claude-code-premium/issues)
-- [Discussions](https://github.com/Tim0219800/claude-code-premium/discussions)
+- [Report Issues](https://github.com/Tim0219800/claudecode_expert_toolkit/issues)
+- [Discussions](https://github.com/Tim0219800/claudecode_expert_toolkit/discussions)

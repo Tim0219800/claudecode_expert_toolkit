@@ -1,14 +1,14 @@
 #!/bin/bash
 # ============================================================================
 # One-liner remote installer for Claude Code Premium
-# Usage: curl -fsSL https://raw.githubusercontent.com/Tim0219800/claude-code-premium/main/install-remote.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/Tim0219800/claudecode_expert_toolkit/main/install-remote.sh | bash
 # ============================================================================
 
 set -e
 
-REPO="Tim0219800/claude-code-premium"
+REPO="Tim0219800/claudecode_expert_toolkit"
 BRANCH="main"
-TEMP_DIR="/tmp/claude-code-premium-install"
+TEMP_DIR="/tmp/claudecode_expert_toolkit-install"
 
 echo ""
 echo -e "\033[0;36m╔══════════════════════════════════════════════════════════╗\033[0m"
