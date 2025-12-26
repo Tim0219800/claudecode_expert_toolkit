@@ -10,7 +10,7 @@ PLUGIN_NAME="Claude Code Premium"
 VERSION="1.0.0"
 CLAUDE_DIR="$HOME/.claude"
 BACKUP_DIR="$CLAUDE_DIR/.backup"
-REPO_URL="https://github.com/YOUR_USERNAME/claude-code-premium"
+REPO_URL="https://github.com/Tim0219800/claudecode_expert_toolkit"
 
 # === COLORS ===
 RED='\033[0;31m'
