@@ -1,61 +1,63 @@
-# Claude Code Premium Plugin
+# Claude Code Expert Toolkit
 
-A beautiful, feature-rich plugin for [Claude Code](https://claude.ai/code) that adds a premium status bar, powerful skills, session tracking, and auto-permissions.
+> Plugin premium pour Claude Code avec barre de statut avancée, skills puissantes et auto-permissions.
 
-## Features
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/Tim0219800/claudecode_expert_toolkit)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Windows%20|%20Linux%20|%20macOS-lightgrey.svg)]()
 
-### Real-time Status Bar
+---
+
+## Apercu
 
 ```
-~/project | main* | Opus | 12m | ████░░░░░░ 35% | $2.45 ($4.20/h) | +156/-23
+📁 ~/my-project  🌿 main  🤖 Claude Opus 4  📟 v1.0.5  🎨 concise
+⏱️ Session: 45m 23s
+🧠 Context: 35% used / 65% remaining [==========-----]  ⏳ Reset in: ~2h 15m
+💰 $2.45 ($3.20/h)  📊 125,430 tok (2,845 tpm)
 ```
 
-- **Project path** - Current working directory
-- **Git branch** - With dirty indicator (*)
-- **Model** - Color-coded (Opus=magenta, Sonnet=cyan, Haiku=green)
-- **Duration** - Session time
-- **Context bar** - Visual progress with color coding (green→yellow→red)
-- **Cost** - Session cost with hourly rate
-- **Lines changed** - Code modifications (+added/-removed)
+La barre de statut affiche en temps reel :
+- **Repertoire** et **branche Git** actuelle
+- **Modele** Claude utilise + version Claude Code
+- **Duree** de la session
+- **Contexte** avec barre de progression et temps avant reset
+- **Cout** de la session avec taux horaire
+- **Tokens** utilises avec vitesse (tokens/minute)
 
-### 16 Powerful Skills
+---
+
+## 16 Skills Integrees
 
 | Skill | Description |
 |-------|-------------|
-| `/history` | View all past sessions with costs |
-| `/stats` | Detailed session dashboard |
-| `/quick-commit` | Auto-commit with smart messages |
-| `/explain` | Deep code explanation |
-| `/fix` | Auto-fix lint/type errors |
-| `/review` | Professional code review |
-| `/project-init` | Setup CLAUDE.md and config |
-| `/todo` | Persistent project todo list |
-| `/notes` | Quick notes per project |
-| `/test` | Run tests and fix failures |
-| `/docs` | Generate documentation |
-| `/refactor` | Smart refactoring suggestions |
-| `/perf` | Performance analysis |
-| `/deploy` | Automated deployment |
-| `/budget` | Cost tracking and alerts |
-| `/update` | Check and install plugin updates |
+| `/stats` | Dashboard detaille de la session |
+| `/history` | Historique de toutes les sessions |
+| `/quick-commit` | Commit rapide avec message auto-genere |
+| `/review` | Review de code professionnelle |
+| `/explain` | Explication detaillee du code |
+| `/fix` | Correction auto des erreurs lint/type |
+| `/test` | Lancer les tests et corriger les echecs |
+| `/refactor` | Suggestions de refactoring |
+| `/docs` | Generation de documentation |
+| `/perf` | Analyse de performance |
+| `/deploy` | Deploiement automatise |
+| `/budget` | Suivi des couts et alertes |
+| `/project-init` | Setup CLAUDE.md et config |
+| `/todo` | Liste de taches persistante |
+| `/notes` | Notes rapides par projet |
+| `/update` | Verification des mises a jour |
 
-### Auto-Permissions
+---
 
-No more confirmation prompts for common operations:
-- File read/write/edit
-- Git commands
-- npm/yarn/pnpm
-- Python/pip
-- TypeScript/ESLint/Prettier
-- Test frameworks
+## Auto-Permissions
 
-### Session History
+Plus de confirmations pour les operations courantes :
 
-Automatic session saving with:
-- Transcript backups
-- Daily summaries
-- Cost tracking
-- Searchable history
+- **Fichiers** : lecture, ecriture, edition
+- **Git** : status, add, commit, push, pull, branch
+- **Package managers** : npm, yarn, pnpm, pip, cargo, go
+- **Outils dev** : TypeScript, ESLint, Prettier, Jest, Pytest
 
 ---
 
@@ -64,70 +66,58 @@ Automatic session saving with:
 ### Windows (PowerShell)
 
 ```powershell
-# Clone the repository
 git clone https://github.com/Tim0219800/claudecode_expert_toolkit.git
 cd claudecode_expert_toolkit
-
-# Run installer
 .\install.ps1
 ```
 
 ### Linux / macOS
 
 ```bash
-# Clone the repository
 git clone https://github.com/Tim0219800/claudecode_expert_toolkit.git
 cd claudecode_expert_toolkit
-
-# Make installer executable and run
 chmod +x install.sh
 ./install.sh
 ```
 
-### One-liner Install
+### Installation rapide (une ligne)
 
-**Windows:**
+**Windows :**
 ```powershell
 iwr -useb https://raw.githubusercontent.com/Tim0219800/claudecode_expert_toolkit/main/install-remote.ps1 | iex
 ```
 
-**Linux/macOS:**
+**Linux/macOS :**
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Tim0219800/claudecode_expert_toolkit/main/install-remote.sh | bash
 ```
 
 ---
 
-## Usage
+## Utilisation
 
-After installation, **restart Claude Code**:
+Apres installation, **redemarrez Claude Code** :
 
 ```bash
 claude
 ```
 
-The status bar will appear automatically at the bottom of your terminal.
-
-### Using Skills
-
-Just type the skill name:
+La barre de statut apparait automatiquement. Utilisez les skills en tapant leur nom :
 
 ```
-/history          # View session history
-/quick-commit     # Commit with auto-message
-/fix              # Fix all lint errors
-/review           # Code review current changes
+/stats            # Dashboard de session
+/quick-commit     # Commit avec message auto
+/fix              # Corriger les erreurs
+/review           # Review du code
 ```
 
 ---
 
 ## Configuration
 
-Settings are stored in `~/.claude/settings.json`.
+Les parametres sont dans `~/.claude/settings.json`.
 
-### Customize Permissions
-
-Add or remove auto-allowed commands:
+### Personnaliser les permissions
 
 ```json
 {
@@ -140,7 +130,7 @@ Add or remove auto-allowed commands:
 }
 ```
 
-### Disable Status Line
+### Desactiver la barre de statut
 
 ```json
 {
@@ -148,26 +138,9 @@ Add or remove auto-allowed commands:
 }
 ```
 
-### Custom Hooks
-
-Add hooks for events:
-
-```json
-{
-  "hooks": {
-    "PreToolUse": [
-      {
-        "type": "command",
-        "command": "echo 'Tool about to run'"
-      }
-    ]
-  }
-}
-```
-
 ---
 
-## Updating
+## Mise a jour
 
 ### Windows
 
@@ -187,7 +160,7 @@ git pull
 
 ---
 
-## Uninstalling
+## Desinstallation
 
 ### Windows
 
@@ -203,59 +176,48 @@ git pull
 
 ---
 
-## File Structure
+## Structure des fichiers
 
 ```
 ~/.claude/
 ├── settings.json          # Configuration
-├── statusline.ps1/.sh     # Status bar script
+├── statusline.sh          # Script barre de statut
 ├── commands/              # Skills
-│   ├── history.md
 │   ├── stats.md
 │   ├── quick-commit.md
+│   ├── review.md
 │   └── ...
-├── hooks/                 # Event hooks
-│   └── save-session.ps1/.sh
-└── history/               # Session data
-    ├── sessions-index.json
-    ├── daily/
-    │   └── 2025-01-15.md
-    └── *.jsonl            # Transcripts
+└── history/               # Donnees de session
+    └── sessions-index.json
 ```
 
 ---
 
-## Contributing
+## Contribuer
 
-Contributions are welcome! Please:
+Les contributions sont les bienvenues !
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+1. Fork le repository
+2. Creez une branche feature
+3. Faites vos modifications
+4. Soumettez une pull request
 
-### Adding a New Skill
+### Ajouter une nouvelle skill
 
-1. Create `src/commands/your-skill.md`
-2. Add YAML frontmatter with description
-3. Write instructions for Claude
-4. Run installer to deploy
+1. Creer `src/commands/votre-skill.md`
+2. Ajouter le frontmatter YAML avec description
+3. Ecrire les instructions
+4. Lancer l'installateur
 
 ---
 
 ## License
 
-MIT License - see [LICENSE](LICENSE)
-
----
-
-## Credits
-
-Created with Claude Code by the community.
+MIT License - voir [LICENSE](LICENSE)
 
 ---
 
 ## Support
 
-- [Report Issues](https://github.com/Tim0219800/claudecode_expert_toolkit/issues)
+- [Signaler un probleme](https://github.com/Tim0219800/claudecode_expert_toolkit/issues)
 - [Discussions](https://github.com/Tim0219800/claudecode_expert_toolkit/discussions)
