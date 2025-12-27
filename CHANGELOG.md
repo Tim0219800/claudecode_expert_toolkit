@@ -2,6 +2,29 @@
 
 All notable changes to Claude Code Premium will be documented in this file.
 
+## [2.0.0] - 2025-12-27
+
+### Added
+- **Enhanced Status Line** - Multi-line premium display with:
+  - Session timing with seconds precision
+  - Weekly statistics tracking (sessions, cost, time, tokens)
+  - Estimated time until context reset
+  - Tokens per minute (tpm) rate
+  - Persistent weekly data storage
+
+### Changed
+- Status line now shows 5 lines of information
+- Context bar extended to 15 segments
+- Added emojis for better visual scanning
+- Improved color coding
+
+### Technical
+- Added `weekly_stats.json` for persistent tracking
+- Session deduplication to prevent double counting
+- Cross-platform weekly stats support (bash + PowerShell)
+
+---
+
 ## [1.0.0] - 2025-12-26
 
 ### Added
