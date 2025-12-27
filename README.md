@@ -2,7 +2,7 @@
 
 > Plugin premium pour Claude Code avec barre de statut avancée, skills puissantes et auto-permissions.
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/Tim0219800/claudecode_expert_toolkit)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/Tim0219800/claudecode_expert_toolkit)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20|%20Linux%20|%20macOS-lightgrey.svg)]()
 
@@ -11,19 +11,21 @@
 ## Apercu
 
 ```
-📁 ~/my-project  🌿 main  🤖 Claude Opus 4  📟 v1.0.5  🎨 concise
+📁 ~/my-project  🌿 main  🤖 Claude Opus 4  📟 v2.0.0
 ⏱️ Session: 45m 23s
 🧠 Context: 35% used / 65% remaining [==========-----]  ⏳ Reset in: ~2h 15m
 💰 $2.45 ($3.20/h)  📊 125,430 tok (2,845 tpm)
+📅 This week: 5 sessions  💵 $12.50  🕐 3h45m  📈 450,000 tok
 ```
 
 La barre de statut affiche en temps reel :
 - **Repertoire** et **branche Git** actuelle
 - **Modele** Claude utilise + version Claude Code
-- **Duree** de la session
-- **Contexte** avec barre de progression et temps avant reset
+- **Duree** de la session (heures, minutes, secondes)
+- **Contexte** avec barre de progression et temps estime avant reset
 - **Cout** de la session avec taux horaire
 - **Tokens** utilises avec vitesse (tokens/minute)
+- **Statistiques hebdomadaires** : sessions, cout total, duree, tokens
 
 ---
 
@@ -180,16 +182,26 @@ git pull
 
 ```
 ~/.claude/
-├── settings.json          # Configuration
-├── statusline.sh          # Script barre de statut
+├── settings.json          # Configuration principale
+├── statusline.sh          # Script barre de statut (Linux/macOS)
+├── statusline.ps1         # Script barre de statut (Windows)
+├── weekly_stats.json      # Statistiques hebdomadaires persistantes
 ├── commands/              # Skills
 │   ├── stats.md
 │   ├── quick-commit.md
 │   ├── review.md
 │   └── ...
+├── hooks/                 # Hooks automatiques
+│   └── save-session.ps1   # Sauvegarde auto des sessions
 └── history/               # Donnees de session
     └── sessions-index.json
 ```
+
+### Nouveautes v2.0.0
+
+- **Statistiques hebdomadaires** : Suivi automatique du nombre de sessions, cout cumule, duree totale et tokens utilises par semaine
+- **Fichier persistant** : `weekly_stats.json` stocke les donnees entre les sessions
+- **Reset automatique** : Les stats se remettent a zero chaque dimanche
 
 ---
 
