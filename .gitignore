@@ -13,3 +13,9 @@ Thumbs.db
 
 # Local testing
 .claude/history/
+
+# External projects
+cc-statusline-main/
+
+# Windows artifacts
+nul

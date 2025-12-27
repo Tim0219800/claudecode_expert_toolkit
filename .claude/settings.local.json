@@ -12,7 +12,8 @@
       "Bash(bash:*)",
       "Bash(powershell -File install.ps1:*)",
       "Bash(cat:*)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(tree:*)"
     ]
   }
 }
