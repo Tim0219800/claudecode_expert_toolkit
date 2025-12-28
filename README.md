@@ -1,8 +1,8 @@
 # Claude Code Expert Toolkit
 
-> Plugin premium pour Claude Code avec barre de statut avancée, skills puissantes et auto-permissions.
+> Plugin premium pour Claude Code avec barre de statut avancee, limites de compte en temps reel, skills puissantes et auto-permissions.
 
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/Tim0219800/claudecode_expert_toolkit)
+[![Version](https://img.shields.io/badge/version-4.0.0-blue.svg)](https://github.com/Tim0219800/claudecode_expert_toolkit)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20|%20Linux%20|%20macOS-lightgrey.svg)]()
 
@@ -11,21 +11,26 @@
 ## Apercu
 
 ```
-📁 ~/my-project  🌿 main  🤖 Claude Opus 4  📟 v2.0.0
-⏱️ Session: 45m 23s
-🧠 Context: 35% used / 65% remaining [==========-----]  ⏳ Reset in: ~2h 15m
-💰 $2.45 ($3.20/h)  📊 125,430 tok (2,845 tpm)
-📅 This week: 5 sessions  💵 $12.50  🕐 3h45m  📈 450,000 tok
+~/my-project (main*)  Opus  45m
+5H 35% [===-----] 2h15m  7J 12% [=-------] 5j
+CTX 28% [===-------] 56k  $2.45  +150/-23
 ```
 
-La barre de statut affiche en temps reel :
-- **Repertoire** et **branche Git** actuelle
-- **Modele** Claude utilise + version Claude Code
-- **Duree** de la session (heures, minutes, secondes)
-- **Contexte** avec barre de progression et temps estime avant reset
-- **Cout** de la session avec taux horaire
-- **Tokens** utilises avec vitesse (tokens/minute)
-- **Statistiques hebdomadaires** : sessions, cout total, duree, tokens
+### Ce que la barre affiche en temps reel :
+
+| Ligne | Contenu |
+|-------|---------|
+| **1** | Projet, branche Git, modele Claude, duree session |
+| **2** | **Limites compte REELLES** : session 5h (%) + reset, hebdo 7j (%) + reset |
+| **3** | Contexte (%), tokens utilises, cout session, lignes modifiees |
+
+### Nouveaute v4.0 : Vraies donnees du compte
+
+La barre de statut recupere maintenant vos **vraies limites d'utilisation** directement depuis l'API Anthropic :
+- **5H** : Pourcentage de votre session de 5 heures + temps avant reset
+- **7J** : Pourcentage de votre limite hebdomadaire + jours avant reset
+
+Ces donnees correspondent exactement a ce que vous voyez sur [claude.ai/settings/usage](https://claude.ai/settings/usage).
 
 ---
 
@@ -183,9 +188,9 @@ git pull
 ```
 ~/.claude/
 ├── settings.json          # Configuration principale
-├── statusline.sh          # Script barre de statut (Linux/macOS)
 ├── statusline.ps1         # Script barre de statut (Windows)
-├── weekly_stats.json      # Statistiques hebdomadaires persistantes
+├── statusline.sh          # Script barre de statut (Linux/macOS)
+├── .credentials.json      # Token OAuth (utilise pour les stats)
 ├── commands/              # Skills
 │   ├── stats.md
 │   ├── quick-commit.md
@@ -197,11 +202,31 @@ git pull
     └── sessions-index.json
 ```
 
-### Nouveautes v2.0.0
+---
 
-- **Statistiques hebdomadaires** : Suivi automatique du nombre de sessions, cout cumule, duree totale et tokens utilises par semaine
-- **Fichier persistant** : `weekly_stats.json` stocke les donnees entre les sessions
-- **Reset automatique** : Les stats se remettent a zero chaque dimanche
+## Changelog
+
+### v4.0.0 (2024-12-28)
+- **Vraies limites de compte** : Recuperation des % d'utilisation session/hebdo via l'API Anthropic
+- **Temps avant reset** : Affichage du temps restant avant reset de la session et de la semaine
+- **Correction emojis Windows** : Remplacement des emojis par des alternatives ASCII compatibles
+
+### v3.0.0
+- Statistiques hebdomadaires avec budget configurable
+- Estimation du temps avant reset du contexte
+
+### v2.0.0
+- Statistiques hebdomadaires persistantes
+- 16 skills integrees
+- Auto-permissions
+
+---
+
+## Comment ca marche
+
+Le script statusline utilise l'endpoint API `https://api.anthropic.com/api/oauth/usage` avec votre token OAuth (stocke dans `~/.claude/.credentials.json`) pour recuperer vos vraies limites d'utilisation.
+
+**Important** : Cet appel API ne consomme PAS de credits - c'est simplement une lecture de vos statistiques.
 
 ---
 
@@ -233,3 +258,10 @@ MIT License - voir [LICENSE](LICENSE)
 
 - [Signaler un probleme](https://github.com/Tim0219800/claudecode_expert_toolkit/issues)
 - [Discussions](https://github.com/Tim0219800/claudecode_expert_toolkit/discussions)
+
+---
+
+## Credits
+
+- Endpoint API decouvert grace a [codelynx.dev](https://codelynx.dev/posts/claude-code-usage-limits-statusline)
+- Inspiration de [Claude-Usage-Tracker](https://github.com/hamed-elfayome/Claude-Usage-Tracker)

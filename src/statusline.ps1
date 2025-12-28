@@ -113,7 +113,7 @@ $contextColor = switch ($true) {
 # Progress bar (10 segments)
 $filledSegments = [math]::Floor($contextPercent / 10)
 $emptySegments = 10 - $filledSegments
-$progressBar = ("$contextColor" + ([string][char]0x2588 * $filledSegments) + "$GRAY" + ([string][char]0x2591 * $emptySegments) + "$RESET")
+$progressBar = "[${contextColor}" + ("=" * $filledSegments) + "${GRAY}" + ("-" * $emptySegments) + "${RESET}]"
 
 # Lines modified
 $linesAdded = if ($data.cost.total_lines_added) { $data.cost.total_lines_added } else { 0 }
